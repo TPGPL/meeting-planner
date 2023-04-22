@@ -16,10 +16,6 @@ public class Calendar {
         this.workingHours = workingHours;
     }
 
-    public TimeRange getWorkingHours() {
-        return workingHours;
-    }
-
     public void addPlannedMeeting(TimeRange newMeeting) {
         if (newMeeting == null) {
             throw new IllegalArgumentException("The newMeeting param must not be null");
