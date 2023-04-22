@@ -16,17 +16,11 @@ public class MeetingPlanner {
 
         List<TimeRange> possibleMeetings = new ArrayList<>();
 
-        // 1. Calculate break times for both calendars;
-
         List<TimeRange> firstBreakTimes = firstCalendar.getBreakTimes();
         List<TimeRange> secondBreakTimes = secondCalendar.getBreakTimes();
 
-        // 2. Remove breaks shorter than meeting duration
-
         firstBreakTimes.removeIf(m -> m.getDurationInMinutes() < meetingDuration);
         secondBreakTimes.removeIf(m -> m.getDurationInMinutes() < meetingDuration);
-
-        // 3. Calculate possible meeting times for colliding breaks
 
         for (TimeRange m : firstBreakTimes) {
             for (TimeRange n : secondBreakTimes) {
