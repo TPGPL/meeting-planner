@@ -5,6 +5,14 @@ import java.util.List;
 
 public class MeetingPlanner {
 
+    /**
+     * Calculates possible meeting times of a certain duration for provided calendars.
+     *
+     * @param firstCalendar   first person's calendar
+     * @param secondCalendar  second person's calendar
+     * @param meetingDuration meeting duration in minutes
+     * @return a list of possible meeting times
+     */
     public static List<TimeRange> calculatePossibleMeetings(Calendar firstCalendar, Calendar secondCalendar, int meetingDuration) {
         if (firstCalendar == null || secondCalendar == null) {
             throw new IllegalArgumentException("The calendar params must not be null.");
